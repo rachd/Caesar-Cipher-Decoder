@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Caesar Cipher Decoder</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.5/angular.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+</head>
+<body ng-app="caesar">
+	<h1>Type an encoded message in the box to decode a Caesar Cipher</h1>
+	<div ng-controller="CaesarController">
+		<textarea ng-change="decode()" ng-model="encodedMessage"></textarea>
+		<select ng-change="decode()" ng-model="switchValue" ng-init="switchValue=options[0]" ng-options="option as option for option in options"></select>
+		<h2>{{decodedMessage}}</h2>
+	</div>
+</body>
+</html>
