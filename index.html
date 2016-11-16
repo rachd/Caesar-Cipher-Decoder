@@ -8,10 +8,16 @@
 </head>
 <body ng-app="caesar">
 	<h1>Type an encoded message in the box to decode a Caesar Cipher</h1>
-	<div ng-controller="CaesarController">
-		<textarea ng-change="decode()" ng-model="encodedMessage"></textarea>
-		<select ng-change="decode()" ng-model="switchValue" ng-init="switchValue=options[0]" ng-options="option as option for option in options"></select>
-		<h2>{{decodedMessage}}</h2>
+	<div class="col-container" ng-controller="CaesarController">
+		<div class="col left-col">
+			<h2>Encoded Message:</h2>
+			<span>Swich Value: </span><select ng-change="decode()" ng-model="switchValue" ng-init="switchValue=options[0]" ng-options="option as option for option in options"></select>
+			<span>Message: </span><textarea ng-change="decode()" ng-model="encodedMessage"></textarea>
+		</div>
+		<div class="col right-col">
+			<h2>Decoded Message:</h2>
+			<p>{{decodedMessage}}</h3>
+		</div>
 	</div>
 </body>
 </html>
